@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
+import React, { Component } from "react";
+import { clear, setPaginationOptions } from "./utils/StorageService";
+
+import AppNavbar from "./Components/AppNavbar";
+import GameDetails from "./Components/GameDetails";
+import GamesList from "./Components/GamesList";
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    clear();
+    setPaginationOptions();
+  }
+
+  render() {
+    return (
+      <BrowserRouter>
+        <div className="app">
+          <AppNavbar search={this.search} />
+          <Switch>
+            <Route path="/" exact component={GamesList} />
+            <Route path="/games/:gameRank" exact component={GameDetails} />
+            <Route render={() => <Redirect to={{ pathname: "/" }} />} />
+          </Switch>
+        </div>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;

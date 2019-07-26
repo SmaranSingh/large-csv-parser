@@ -1,0 +1,73 @@
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
+
+html,
+.app {
+  background-color: #f8f9fa;
+}
+
+.bg-light-grey {
+  background-color: #f3f4f5;
+}
+
+.no-games-indicator {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.games-list {
+  margin: auto;
+}
+
+.sort-section {
+  padding-top: 15px;
+}
+
+.game-link:hover {
+  .game-tile {
+    background-color: #f3f4f5;
+  }
+  text-decoration: none;
+  color: #212529;
+}
+
+.game-link {
+  color: #212529;
+}
+
+.game-tile {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 0;
+  h5,
+  h4 {
+    display: inline;
+  }
+  .game-platform {
+    float: right;
+    .badge {
+      color: #fff;
+      height: 2rem;
+      width: 3.2rem;
+      background-color: #666666;
+      padding-top: 0.5rem;
+      overflow: hidden;
+    }
+  }
+}
+
+.pull-right {
+  float: right;
+}
+
+.game-card {
+  margin: 15px;
+  .rank1 {
+    color: gold;
+  }
+  .rank2 {
+    color: silver;
+  }
+  .rank3 {
+    color: #cd7f32;
+  }
+}
